@@ -34,9 +34,9 @@ export default class FetchData extends React.Component {
           </tr>
           <tr>
             <td>{this.state.match.sport_nice}</td>
-            <td>{this.state.match.teams[0] + " VS " + this.state.match.teams[1]}</td>
+            <td>{this.state.match.teams[0]} <br></br>  <br></br> {this.state.match.teams[1]}</td>
             <td>{this.state.match.sites[0].site_nice}</td>
-            <td>{this.state.match.sites[0].odds.h2h}</td>
+            <td>{this.state.match.sites[0].odds.h2h[0] + ", " + this.state.match.sites[0].odds.h2h[1] + ", " + this.state.match.sites[0].odds.h2h[2]}</td>
           </tr>
         </table>
       </div>
