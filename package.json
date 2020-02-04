@@ -1,0 +1,19 @@
+{
+  "name": "theodds",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/topherb99/the-odds.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/topherb99/the-odds/issues"
+  },
+  "homepage": "https://github.com/topherb99/the-odds#readme"
+}
