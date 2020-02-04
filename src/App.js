@@ -1,15 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import FetchData from "./components/FetchData";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1> Hello world </h1>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    visible: true
+  };
+
+  render() {
+    return (
+      <div className="App-header">
+        <FetchData />
+      </div>
+    );
+  }
 }
 
 export default App;
