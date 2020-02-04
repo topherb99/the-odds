@@ -11,7 +11,9 @@ class App extends Component {
     return (
       <div className="App-header">
       <h1>Hello world</h1>
-        <FetchData />
+        <div className="Results">
+          <FetchData/>
+        </div>
       </div>
     );
   }
