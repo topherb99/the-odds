@@ -1,3 +1,7 @@
+# The Odds
+
+A full-stack app bringing you the best odds for a specific sporting event over multiple betting sites
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
