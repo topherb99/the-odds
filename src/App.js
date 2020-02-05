@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import FetchData from "./components/FetchData";
+import FetchFootballData from "./components/FetchFootballData";
+import FetchRugbyData from "./components/FetchRugbyData";
+import FetchMMAData from "./components/FetchMMAData";
 
 class App extends Component {
   state = {
@@ -10,9 +12,9 @@ class App extends Component {
   render() {
     return (
       <div className="App-header">
-      <h1>Hello world</h1>
+      <h1>TheOdds</h1>
         <div className="Results">
-          <FetchData/>
+          <FetchFootballData/><FetchRugbyData/><FetchMMAData/>
         </div>
       </div>
     );

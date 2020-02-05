@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class FetchData extends React.Component {
+export default class FetchFootballData extends React.Component {
   state = {
     loading: true,
     person: null
@@ -8,18 +8,19 @@ export default class FetchData extends React.Component {
 
   async componentDidMount() {
     // const url = "https://api.randomuser.me/";
-    const url = "https://api.the-odds-api.com/v3/odds/?sport=soccer_epl&region=uk&apiKey=5857547a906e62baf8fed4502a23bab0";
+    const url = "https://api.the-odds-api.com/v3/odds/?sport=rugbyunion_six_nations&region=uk&apiKey=5857547a906e62baf8fed4502a23bab0";
     const response = await fetch(url);
     const data = await response.json();
-    this.setState({ match: data.data[0], loading: false });
+    this.setState({ match: data.data[1], loading: false });
   }
 
   createTable = () => {
     let table = []
 
     // Outer loop to create parent
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 3; i++) {
       let sport = []
+      let home_team = []
       let teams = []
       let bookmaker = []
       let odds = []
@@ -27,7 +28,9 @@ export default class FetchData extends React.Component {
       for (let j = 0; j < 1; j++) {
         sport.push(<td>{this.state.match.sport_nice}</td>)
 
-        teams.push(<td>{this.state.match.teams[0]} <br></br>  <br></br> {this.state.match.teams[1]}</td>)
+        teams.push(<td>{this.state.match.teams[0]}<br></br><br></br>{this.state.match.teams[1]}</td>)
+
+        home_team.push(<td>{this.state.match.home_team}</td>)
 
         bookmaker.push(<td>{this.state.match.sites[i].site_nice}</td>)
 
@@ -40,6 +43,7 @@ export default class FetchData extends React.Component {
       table.push(<tr>
                     {sport}
                     {teams}
+                    {home_team}
                     {bookmaker}
                     {odds}
                  </tr>)
@@ -49,22 +53,16 @@ export default class FetchData extends React.Component {
 
   render() {
     if (this.state.loading) {
-      return <div>loading...</div>
+      return <div>loading Rugby odds...</div>
     }
 
-    // if (!this.state.person) {
-    //   return <div>didn't get a person</div>;
-    // }
+    if (!this.state.match) {
+      return <div>wrong api call</div>;
+    }
 
     return (
 
       <table>
-        <tr>
-          <th>Sport</th>
-          <th>Teams</th>
-          <th>Bookmaker</th>
-          <th>Odds</th>
-        </tr>
         {this.createTable()}
       </table>
     );
