@@ -64,6 +64,7 @@ export default class FetchFootballData extends React.Component {
     return (
 
       <table>
+      <br></br>
         {this.createTable()}
       </table>
     );

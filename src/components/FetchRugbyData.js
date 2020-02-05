@@ -51,6 +51,8 @@ export default class FetchFootballData extends React.Component {
     return table
   }
 
+
+
   render() {
     if (this.state.loading) {
       return <div>loading Rugby odds...</div>
@@ -63,6 +65,7 @@ export default class FetchFootballData extends React.Component {
     return (
 
       <table>
+      <br></br>
         {this.createTable()}
       </table>
     );
